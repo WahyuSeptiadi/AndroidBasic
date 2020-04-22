@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9AE0FF"
+    tools:context=".Activity.MainActivity">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swapRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_below="@+id/topBar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        app:titleTextColor="#fff" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searching"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:visibility="gone"
+        android:layout_below="@+id/topBar"
+        android:background="@drawable/bg_searching">
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints=""
+            android:inputType="textAutoComplete"
+            android:hint="@string/hint_searching"/>
+
+        <ImageView
+            android:id="@+id/btnCari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_round"
+            android:padding="5dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/btnVisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="317dp"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_search"
+        android:contentDescription="@string/todo" />
+
+    <ImageView
+        android:id="@+id/btnProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_profile"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titlebar_home"
+        android:textAlignment="center"
+        android:layout_marginTop="13dp"
+        android:textSize="18sp"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:id="@+id/not_found"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/not_found"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_below="@id/topBar"
+        android:textSize="18sp"
+        android:textColor="#fff"/>
+
+</RelativeLayout>
